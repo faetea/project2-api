@@ -1,0 +1,69 @@
+Parameters:
+
+city
+  city.id City ID
+  city.name City name
+  city.coord
+    city.coord.lon City geo location, longitude
+    city.coord.lat City geo location, latitude
+  city.country Country code (GB, JP etc.)
+
+temperature
+  temperature.value Temperature
+  temperature.min Minimum temperature at the moment of calculation. This is deviation from 'temp' that is possible for large cities and megalopolises geographically expanded (use these parameter optionally).
+  temperature.max Maximum temperature at the moment of calculation. This is deviation from 'temp' that is possible for large cities and megalopolises geographically expanded (use these parameter optionally).
+  temperature.unit Unit of measurements. Possilbe valure is Celsius, Kelvin, Fahrenheit.
+
+humidity
+  humidity.value Humidity value
+  humidity.unit %
+
+pressure
+  pressure.value Pressure value
+  pressure.unit hPa
+
+wind
+  wind.speed
+    wind.speed.value Wind speed, mps
+    wind.speed.name Type of the wind
+  wind.direction
+    wind.direction.value Wind direction, degrees (meteorological)
+    wind.direction.code Code of the wind direction. Possilbe value is WSW, N, S etc.
+    wind.direction.name Full name of the wind direction.
+
+clouds
+  clouds.value Cloudiness
+  clouds.name Name of the cloudiness
+
+visibility
+  visibility.value Visibility, meter
+
+precipitation
+  precipitation.value Precipitation, mm
+  precipitation.mode Possible values are 'no", name of weather phenomena as 'rain', 'snow'
+
+weather
+  weather.number Weather condition id
+  weather.value Weather condition name
+  weather.icon Weather icon id
+
+lastupdate
+  lastupdate.value Last time when data was updated
+
+
+
+By city ID Cambridge
+http://api.openweathermap.org/data/2.5/weather?id=4931972&APPID=0166410dc4d77a96f77246b51032dd45
+
+By city ID Boston
+http://api.openweathermap.org/data/2.5/weather?id=4930956&APPID=0166410dc4d77a96f77246b51032dd45
+
+By city Name
+http://api.openweathermap.org/data/2.5/weather?q=Boston,us&APPID=0166410dc4d77a96f77246b51032dd45
+
+By zip Code
+http://api.openweathermap.org/data/2.5/weather?zip=02141,us&APPID=0166410dc4d77a96f77246b51032dd45
+
+
+All data
+http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=0166410dc4d77a96f77246b51032dd45
