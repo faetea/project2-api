@@ -1,0 +1,89 @@
+# Project-2-back-end
+Back-end for single-page application with basic user authentication that interacts with custom API
+
+
+I need to build a fresh API from my back-end?
+http://guides.rubyonrails.org/getting_started.html
+
+
+Seed data from Logan Airport
+
+http://w1.weather.gov/obhistory/KBOS.html
+
+Date, Time, Weather, AirTemp(ºF), RelHumidity, Pressure Sea Level (mb)
+
+11, 10:54,  Mist Breezy,    47, 93%,  1009.3
+11, 09:54,  Mist Breezy,    47, 93%,  1009.1
+11, 08:54,  Mist,           48, 89%,  1009.1
+11, 07:54,  Rain Mist,      47, 93%,  1008.8
+11, 06:54,  Mist Breezy,    47, 93%,  1008.3
+11, 05:54,  Rain Breezy,    48, 93%,  1008.2
+11, 04:54,  Rain Mist,      50, 93%,  1008.6
+11, 03:54,  Rain Mist,      50, 96%,  1009.3
+11, 02:54,  Light Rain,     50, 96%,  1009.7
+11, 01:54,  Light Rain,     50, 96%,  1010.3
+11, 00:54,  Light Rain,     50, 96%,  1011.1
+
+10, 23:54,  Overcast,       50, 89%,  1012.2
+10, 22:54,  Light Rain,     50, 89%,  1013.3
+10, 21:54,  Overcast,       50, 89%,  1014.5
+10, 20:54,  Light Rain,     50, 89%,  1015.4
+10, 19:54,  Light Rain,     50, 83%,  1016.0
+10, 18:54,  Overcast,       50, 80%,  1017.1
+10, 17:54,  Overcast,       50, 77%,  1017.5
+10, 16:54,  Overcast,       50, 74%,  1018.3
+10, 15:54,  Overcast,       50, 71%,  1018.7
+10, 14:54,  Overcast,       51, 64%,  1019.6
+10, 13:54,  Overcast,       51, 66%,  1019.8
+10, 12:54,  Overcast,       51, 59%,  1020.9
+10, 11:54,  Overcast,       52, 55%,  1022.0
+10, 10:54,  Mostly Cloudy,  51, 64%,  1023.4
+10, 09:54,  Mostly Cloudy,  51, 61%,  1024.4
+10, 08:54,  Mostly Cloudy,  51, 59%,  1024.4
+10, 07:54,  Mostly Cloudy,  50, 61%,  1024.8
+10, 06:54,  Mostly Cloudy,  37, 71%,  1024.5
+10, 05:54,  Overcast,       45, 74%,  1024.5
+10, 04:54,  Mostly Cloudy,  46, 68%,  1024.5
+10, 03:54,  Mostly Cloudy,  47, 66%,  1024.8
+10, 02:54,  Mostly Cloudy,  47, 69%,  1025.2
+10, 01:54,  Mostly Cloudy,  47, 66%,  1026.1
+10, 00:54,  Mostly Cloudy,  47, 66%,  1026.4
+
+
+
+09  23:54 SW 8  10.00 Mostly Cloudy BKN220  48  36      63% 44  NA  30.32 1026.6
+09  22:54 SW 10 10.00 Mostly Cloudy BKN200  48  35      61% 44  NA  30.33 1026.9
+09  21:54 SW 10 10.00 Mostly Cloudy BKN200  49  34      56% 45  NA  30.34 1027.2
+09  20:54 SW 9  10.00 Mostly Cloudy BKN200  50  33      52% 46  NA  30.34 1027.2
+09  19:54 SW 9  10.00 A Few Clouds  FEW200  51  32      48% NA  NA  30.34 1027.3
+09  18:54 S 5 10.00 A Few Clouds  FEW200  51  33  60  51  50% NA  NA  30.35 1027.6
+09  17:54 SW 7  10.00 A Few Clouds  FEW200  54  32      43% NA  NA  30.35 1027.7
+09  16:54 SW 9  10.00 Partly Cloudy FEW200 SCT320 56  31      39% NA  NA  30.34 1027.4
+09  15:54 SW 12 G 17  10.00 Partly Cloudy SCT250  58  30      35% NA  NA  30.34 1027.2
+09  14:54 SW 13 10.00 A Few Clouds  FEW250  59  31      35% NA  NA  30.34 1027.4
+09  13:54 W 10  10.00 A Few Clouds  FEW250  59  31      35% NA  NA  30.34 1027.3
+09  12:54 SW 12 G 17  10.00 A Few Clouds  FEW250  58  31  58  42  36% NA  NA  30.36 1027.9
+09  11:54 SW 9  10.00 A Few Clouds  FEW250  57  32      39% NA  NA  30.39 1028.9
+09  10:54 W 7 10.00 A Few Clouds  FEW250  54  32      43% NA  NA  30.41 1029.8
+09  09:54 W 8 10.00 A Few Clouds  FEW250  52  33      49% NA  NA  30.42 1030.1
+09  08:54 W 7 10.00 A Few Clouds  FEW250  50  33      52% 47  NA  30.43 1030.5
+09  07:54 W 8 10.00 A Few Clouds  FEW250  47  33      59% 43  NA  30.43 1030.5
+09  06:54 SW 8  10.00 A Few Clouds  FEW250  43  33  46  41  68% 38  NA  30.42 1030.0
+09  05:54 W 7 10.00 A Few Clouds  FEW250  44  33      65% 40  NA  30.40 1029.4
+09  04:54 W 9 10.00 A Few Clouds  FEW250  44  32      63% 39  NA  30.40 1029.5
+09  03:54 W 8 10.00 A Few Clouds  FEW250  44  32      63% 39  NA  30.40 1029.3
+09  02:54 W 8 10.00 Fair  CLR 46  32      58% 42  NA  30.39 1029.0
+09  01:54 W 12  10.00 Fair  CLR 46  32      58% 40  NA  30.39 1029.1
+09  00:54 SW 8  10.00 Fair  CLR 44  32  52  44  63% 39  NA  30.39 1029.0
+08  23:54 W 7 10.00 Fair  CLR 47  31      54% 44  NA  30.38 1028.7
+08  22:54 W 10  10.00 Fair  CLR 48  31      52% 44  NA  30.37 1028.4
+08  21:54 W 9 10.00 Fair  CLR 49  30      48% 45  NA  30.38 1028.6
+08  20:54 W 9 10.00 Fair  CLR 50  29      44% 46  NA  30.38 1028.5
+08  19:54 W 12  10.00 Fair  CLR 51  29      43% NA  NA  30.36 1027.9
+08  18:54 W 13  10.00 Fair  CLR 52  28  56  51  40% NA  NA  30.35 1027.5
+08  17:54 NW 8  10.00 Fair  CLR 53  26      35% NA  NA  30.32 1026.7
+08  16:54 W 9 10.00 Fair  CLR 53  24      32% NA  NA  30.30 1026.0
+08  15:54 NW 10 10.00 Fair  CLR 55  25      31% NA  NA  30.28 1025.3
+08  14:54 W 16 G 21 10.00 A Few Clouds  FEW060  55  24      30% NA  NA  30.27 1025.0
+08  13:54 W 14 G 22 10.00 A Few Clouds  FEW060  56  26      32% NA  NA  30.27 1024.8
+08  12:54 W 14 G 20 10.00 A Few Clouds  FEW060  55  26  55  45  33% NA  NA  30.26 1024.8
