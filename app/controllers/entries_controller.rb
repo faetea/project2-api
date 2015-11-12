@@ -11,10 +11,10 @@ class EntriesController < UsersController
 
   # # GET /entries/1
   # # shows one specific Entry from auth user
-  # def show
-  #   @entry = Entry.find(params[:id])
-  #   render json: @entry
-  # end
+  def show
+    @entry = Entry.find(params[:id])
+    render json: @entry
+  end
 
   # POST /entries
   # creates Entry by auth user
@@ -29,13 +29,13 @@ class EntriesController < UsersController
 
   # # PATCH /entries/1
   # # updates one specific Entry of auth user
-  # def update
-  #   if @entry.update(entry_params)
-  #     head :no_content
-  #   else
-  #     render json: @entry.errors, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @entry.update(entry_params)
+      head :no_content
+    else
+      render json: @entry.errors, status: :unprocessable_entity
+    end
+  end
 
   # DELETE /entries/1
   # delete entries by authorized user
