@@ -45,7 +45,7 @@ class EntriesController < UsersController
   end
 
   def entry_params
-    params.require(:entry).permit(:day_rating, :pain_rank, :note_entry, :symptoms, :medication, :mood)
+    params.require(:entry).permit(:day_rating, :pain_rank, :note_entry, :symptoms, :medication, :mood, :created_at)
   end
 
   private :entry_params
