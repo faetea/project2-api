@@ -62,3 +62,12 @@ curl --request POST --header "Authorization: Token token=be249dc0231396806f24c95
   }
 }'  http://localhost:3000/books
 ```
+
+
+curl --request POST --header "Content-Type: application/json" -d '{"credentials":{"email":"freya@world.tree","password":"godess"}}' http://localhost:3000/login
+
+{"user":{"id":2,"email":"freya@world.tree","current_user":false,"token":"a11799b7d8881fd6445098e46cc6b215"}}
+
+curl --request POST --header "Authorization: Token token=a11799b7d8881fd6445098e46cc6b215" --header "Content-Type: application/json" -d '{"entry":{"day_rating":"Good"}}' http://localhost:3000/entries
+
+curl --request POST --header "Authorization: Token token=a11799b7d8881fd6445098e46cc6b215" --header "Content-Type: application/json" -d '{"entry":{"day_rating":"Good", "pain_rank":"3", "note_entry":"only a mild headache.", "symptoms":"headache", "medication":"advil", "mood":4}}' http://localhost:3000/entries

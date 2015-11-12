@@ -1,6 +1,6 @@
 #
 class EntriesController < UsersController
-  before_action :require_login
+  before_action
 
   # GET /entries
   # lists all Entries for auth user
