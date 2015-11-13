@@ -3,21 +3,21 @@ class EntriesController < UsersController
   before_action
 
   # GET /entries
-  # lists all Entries for auth user
+  # listEntries
   def index
     @entry = Entry.all
     render json: @entry
   end
 
-  # # GET /entries/1
-  # # shows one specific Entry from auth user
+  # GET /entries/1
+  # showEntry
   def show
     @entry = Entry.find(params[:id])
     render json: @entry
   end
 
   # POST /entries
-  # creates Entry by auth user
+  # createEntry
   def create
     @entry = current_user.entries.new(entry_params)
     if @entry.save
@@ -27,8 +27,8 @@ class EntriesController < UsersController
     end
   end
 
-  # # PATCH /entries/1
-  # # updates one specific Entry of auth user
+  # PATCH /entries/1
+  # editEntry
   def update
     if @entry.update(entry_params)
       head :no_content
@@ -38,7 +38,7 @@ class EntriesController < UsersController
   end
 
   # DELETE /entries/1
-  # delete entries by authorized user
+  # deleteEntry
   def destroy
     @entry.destroy
     head :no_content
